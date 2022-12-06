@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sleepyowl's Zoo Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="../../css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300&family=Montserrat&family=Rubik:wght@300&family=Share:wght@400;700&display=swap" rel="stylesheet">
+</head>
+  <style>
+    .container {
+      padding: 0px 200px;
+    }
+    .project-item {
+      width: 500px;
+      margin: 30px auto;
+      text-align: center;
+    }
+
+    .project-img {
+      width: 100%;
+      border: #c3c3c3 1px solid;
+      object-fit: cover;
+      border-radius: 5px;
+      transition: transform .2s; /* Animation */
+      margin: 20px;
+    }
+
+    .project-img:hover {
+      transform: scale(1.1); 
+    }
+
+    .inline-link {
+      font-size: 1em;
+      margin: 10px;
+    }
+
+    li {
+        margin: 10px 0;
+    }
+
+    ol > li > ul > li {
+        margin: 0;
+    }
+  </style>
+  <body>
+    <!-- ==========================
+      Navigation 
+    =========================== -->
+    <nav class="navbar" id="navbar">
+        <div class="container-fluid justify-content-end" id="nav-container">
+          <div class="menu">
+            <a href="../../index.html">Home</a>
+            <a href="../../index.html#about">About</a>
+            <a href="../../index.html#projects">Projects</a>
+          </div>
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top: 100px;">
+        <h1> Sleepyowl's Zoo Website </h1>
+        <p> This is application built with <b>React</b> framework. It creates an online interactive zoo where users can filter, sort, like and unlike the animals.
+            The user could learn about the animals' type, geo range, active time, and lifespan information.</p>
+        <div class="project-item">
+          <img class="project-img" src="development.png" alt="Original website">
+          <a class="inline-link" href="https://sleepyowl211.github.io/Development/" target="_blank">Visit webpage →</a>
+          <a class="inline-link" href="https://github.com/sleepyowl211/Development" target="_blank">Github Repo →</a>
+        </div>
+    </div>
+    <div class="container">
+      <h2>Functionality</h2>
+      <ul>
+        <li><b>Sort: </b>The user can sort the animals based on their <b>lifespan</b> through a dropdown menu. Only one type of sorting method could be applied at a time.</li>
+        <li><b>Filter: </b>The user can filter the animals based on <b>active time and animal type</b>. When none or all of the filters are selected, all the animals would be displayed. Within each filter type, the filter applies OR operation. Between the two types, the filter applies AND operation.</li>
+        <li><b>Like: </b>The user can like and unlike any animal. An <b>aggregation section</b> would show the average lifespan of all the liked animals.</li>
+        <li><b>Reset: </b>the user could reset either by clicking the "reset" button, or undoing the liking, sorting and filtering operations.</li>
+      </ul>
+    </div>
+    <div class="container">
+      <h2>Components and Data</h2>
+      <p> Each animal is represented by an <b>"animal card" component</b>. The animal data is represented by a Json data file. 
+          The data is passed down to the component using <b>prop that include Json data, liked status, and function for aggregation.</b></p>
+      <p>The rendering process contains the following steps: </p>
+        <ol type="1">
+          <li>Filter the animal data based on the user input conditions. </li>
+          <li>Map the eligible animals to "animal card component using props. </li>
+          <li>Sort the animal cards based on the user chosen method</li>
+          <li>Update the change of like / unlike stuts for each animal. Display the liked animal list and calculate their average lifespan.</li>
+        </ol>
+      </p>
+    </div>
+    <div class="container">
+      <h2>States</h2>
+      <div class="row">
+        <h3>State Variables</h3>
+        <p>The program uses the following variables to keep track of the data and user input: </p>
+        <ul>
+          <li>Animal Data to display</li>
+          <li>User liked list</li>
+          <li>Aggregated lifespan information of liked animals</li>
+          <li>Applied filter types</li>
+          <li>Applied sorting method</li>
+        </ul>
+      </div>
+      <div class="row">
+        <h3>State Change</h3>
+        <p>There are there major user inputs that triggers state change:</p>
+        <ul>
+          <li>Like/Unlike button: changes the users' liked list and average favorite animal lifespan aggregation. </li>
+          <li>Dropdown menu (sorting method): changes the sorting method of animals based on lifespan. </li>
+          <li>Checkbox (filtering conditions): controls each animal component's display based on given condition. </li>
+        </ul>   
+      </div>
+    </div>
+
+    <!-- ==========================
+    FOOTER
+    =========================== -->
+    <footer>
+        <svg width="100%" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" class="wave transition duration-300 ease-in-out delay-150"><defs><linearGradient id="gradient" x1="50%" y1="0%" x2="50%" y2="100%"><stop offset="5%" stop-color="#80c8db"></stop><stop offset="95%" stop-color="#f8fcff"></stop></linearGradient></defs><path d="M 0,400 C 0,400 0,133 0,133 C 87.45454545454547,126.49282296650716 174.90909090909093,119.98564593301434 271,123 C 367.09090909090907,126.01435406698566 471.81818181818176,138.55023923444978 572,132 C 672.1818181818182,125.44976076555022 767.8181818181818,99.8133971291866 877,94 C 986.1818181818182,88.1866028708134 1108.909090909091,102.19617224880383 1205,112 C 1301.090909090909,121.80382775119617 1370.5454545454545,127.40191387559808 1440,133 C 1440,133 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="0.53" class="transition-all duration-300 ease-in-out delay-150 path-0"></path><defs><linearGradient id="gradient" x1="50%" y1="0%" x2="50%" y2="100%"><stop offset="5%" stop-color="#80c8db"></stop><stop offset="95%" stop-color="#f8fcff"></stop></linearGradient></defs><path d="M 0,400 C 0,400 0,266 0,266 C 89.11961722488039,271.85645933014354 178.23923444976077,277.7129186602871 269,263 C 359.7607655502392,248.2870813397129 452.16267942583715,213.00478468899524 561,221 C 669.8373205741628,228.99521531100476 795.1100478468901,280.26794258373207 886,284 C 976.8899521531099,287.73205741626793 1033.3971291866028,243.92344497607655 1120,233 C 1206.6028708133972,222.07655502392345 1323.3014354066986,244.03827751196172 1440,266 C 1440,266 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-1"></path></svg>
+        <div class="footer-text">
+            <button class="back-top" id="back-top"><i class="fa-solid fa-angles-up"></i></button>
+            <div class="container-fluid">
+            <p class="text-center">Created by Sleepy Owl &copy; 2022
+            <div class="contact justify-content-center">
+                <a href="#">Email</a>
+                <a href="#">Github</a>
+                <a href="#">LinkedIn</a>
+            </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../../js/helper.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </body>
+</html>

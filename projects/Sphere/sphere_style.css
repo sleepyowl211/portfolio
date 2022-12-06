@@ -1,0 +1,149 @@
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.page-section {
+  width: 100%;
+  padding: 0px 200px;
+}
+
+li {
+  margin: 10px 0;
+}
+
+ol > li > ul > li {
+  margin: 0;
+}
+
+.intro-wrapper ul > li {
+  list-style-type: none;
+  text-indent: -1em;
+}
+
+.li_solution:before {
+  /* content reference from https://www.toptal.com/designers/htmlarrows/arrows/right-arrow/ */
+  content: "\2192";
+  padding-right: 0.2rem;
+  list-style-type: none;
+  text-indent: -1em;
+}
+
+.feedback:before {
+  content: "💡";
+  padding-right: 0.2rem;
+}
+
+.img-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 0;
+}
+
+
+.feedback-wrapper {
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: fit-content;
+}
+
+.feedback-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.feedback-item {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.feedback-text,
+.feedback-img {
+  width: 50%;
+}
+
+@media screen and (max-width: 900px) {
+  .feedback-text,
+  .feedback-img {
+    width: 100%;
+  }
+}
+
+.feedback-img-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.feedback-img {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.img-wrapper > a {
+  width: 50%;
+  text-align: center;
+}
+
+.img-wrapper img {
+  width: 100%;
+}
+
+.img-wrapper > a.full-width {
+  width: 100%;
+}
+
+.column-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.iframe-wrapper {
+  width: 100%;
+}
+
+.iframe-wrapper > iframe {
+  width: 100%;
+  min-height: 500px;
+}
+
+video {
+  margin-bottom: 10px;
+}
+
+.video-wrapper {
+  margin-bottom: 50px;
+}
