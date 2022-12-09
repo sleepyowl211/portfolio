@@ -58,6 +58,10 @@ ol > li > ul > li {
   height: fit-content;
 }
 
+.feedback-wrapper ul {
+  list-style: none;
+}
+
 .feedback-text {
   display: flex;
   flex-direction: column;
