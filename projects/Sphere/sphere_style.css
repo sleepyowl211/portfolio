@@ -151,3 +151,23 @@ video {
 .video-wrapper {
   margin-bottom: 50px;
 }
+
+
+.project-item {
+  width: 800px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.project-img {
+  width: 100%;
+  border: #c3c3c3 1px solid;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: transform .2s; /* Animation */
+  margin: 20px;
+}
+
+.project-img:hover {
+  transform: scale(1.1); 
+}
